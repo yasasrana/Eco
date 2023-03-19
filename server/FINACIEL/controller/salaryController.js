@@ -39,14 +39,14 @@ router.post("/salary", async(req, res) => {
                     let response = await newsalary.save();
                     if (response)
                     //console.log(doc);
-                        return res.status(201).send({ message: "New salary Added" });
+                        return res.status(201).send({ message: "New salary record Added" });
                 } catch (err) {
                     //console.log("error while saving");
                     return res.status(500).send({ status: "Internal Server Error" });
                 }
             } else {
                 //console.log("nic found")
-                return res.status(400).send({ status: "User already exist!" });
+                return res.status(400).send({ status: "salary record are already exist!" });
             }
         });
     } catch (err) {
@@ -103,9 +103,9 @@ router.put("/salary/update/:empId", async(req, res) => {
         try {
             const response = await salary.findOneAndUpdate({ empId: empId }, salaryPayload);
             if (response != null) {
-                return res.status(200).send({ status: "salary Successfully updated!" });
+                return res.status(200).send({ status: "salary record Successfully updated!" });
             }
-            return res.status(400).send({ status: "Invalid salary" })
+            return res.status(400).send({ status: "Invalid salary record" })
         } catch (err) {
             return res.status(500).send({ status: "Internal server Error" });
         }
@@ -121,9 +121,9 @@ router.post("/salary/delete/:empId", async(req, res) => {
         try {
             const response = await salary.findOneAndDelete({ empId: empId });
             if (response != null) {
-                return res.status(200).send({ status: "salary Successfully Deleted!" });
+                return res.status(200).send({ status: "salary record Successfully Deleted!" });
             }
-            return res.status(400).send({ status: "Invalid salary" })
+            return res.status(400).send({ status: "Invalid salary record" })
         } catch (err) {
             return res.status(500).send({ status: "Internal server Error" });
         }
