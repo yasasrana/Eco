@@ -50,20 +50,15 @@ app.listen(port, () => {
 //route imports
 
 import imageUploadRoute from "./routes/imageUploadRoute.js";
-
-
-//Doctor route
 import userRoute from "./routes/user.js"; 
-//patient route   
+   
 
 
 //routes 
 
 app.use("/api", imageUploadRoute);
-
-//Doctor routes
 app.use(userRoute);
-//patient routes
+
 
 
 
