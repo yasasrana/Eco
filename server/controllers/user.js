@@ -14,7 +14,15 @@ const userController = {
     }
   },
 
- 
+  //get all users
+  getUsers: async (req, res) => {
+    try {
+      const users = await User.find();
+      res.json({ message: "Users fetch success", data: users });
+    } catch (err) {
+      return res.status(500).json({ message: err.message });
+    }
+  },
 }
 
 export default userController;
