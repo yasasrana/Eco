@@ -1,42 +1,70 @@
-const mongoose = require("mongoose");
-const cors = require("cors");
-const dotenv = require("dotenv");
-const express = require("express");
+import {} from "dotenv/config";
+import express, { json } from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import fileUpload from "express-fileupload";
 
-require("dotenv").config();
+const { connect } = mongoose;
+
+// Connect MongoDB.
+mongoose.set("strictQuery", false);
+const URI = process.env.MONGODB_URL;
+connect(
+  URI,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
+  (err) => {
+    if (!err) {
+      console.log("MongoDB Connection Succeeded.");
+    } else {
+      console.log("Error in DB connection: " + err);
+    }
+  }
+);
+
 const app = express();
+app.use(json());
+app.use(
+  cors({
+    credentials: true,
+    origin: true,
+  })
+);
+app.use(express.urlencoded({ extended: true }));
+app.set("trust proxy", 1);
+app.use(
+  fileUpload({
+    useTempFiles: true,
+  })
+);
+
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => {
+  `Server running on port ${port} 🔥`;
+  console.log(`Server running on port ${port} 🔥`);
+});
+
+//route imports
+
+import imageUploadRoute from "./routes/imageUploadRoute.js";
 
 
-const PORT = process.env.PORT || 5000;
-const URL = process.env.MONGOBD_URL;
-
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({
-  extended: true
-}));
+//Doctor route
+import userRoute from "./routes/user.js"; 
+//patient route   
 
 
-mongoose.connect(URL,{
-    //useCreateIndex:true,
-    useNewUrlParser:true,
-    useUnifiedTopology:true,
-    //useFindAndModify:false
-})
+//routes 
 
-const connction = mongoose.connection;
-connction.once("open", () =>{
-    console.log("Mongodb Connection success");
-})
-app.listen(PORT, () => {
-    console.log(`Server running on port : ${PORT}`);
-})
+app.use("/api", imageUploadRoute);
 
-
-//import routes
-const customer = require("./routes/customer.js");
+//Doctor routes
+app.use(userRoute);
+//patient routes
 
 
 
-//route middleware
-app.use("/customer",customer)
+  
