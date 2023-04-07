@@ -31,7 +31,7 @@ login: async (req, res) => {
   // Check for user email
   const user = await User.findOne({ email });
 
-  if (user && (await bcrypt.compare(password, user.password))) {  
+  if (user && (await bcrypt.compare(password, user.password))) {  //email is found and provided password with the hashed password
     res.json({
       _id: user.id,
       name: user.name,
@@ -40,10 +40,10 @@ login: async (req, res) => {
       role: user.role,
       token: generateToken(user._id),
     });
-  } else {
+  } else { //If the email or password is incorrect
     return res.status(400).json({ msg: "Invalid credentials" });
   }
-},
+},  
 
 //user register 
 createUser: async (req, res) => {
@@ -88,7 +88,24 @@ createUser: async (req, res) => {
   }
 },
 
+//update profile 
+updateUser: async (req, res) => {
+  try {
+    const id = req.params.id;
+    const { firstName, lastName, userName, role, email, password } = req.body;
 
+    await User.findOneAndUpdate(
+      { _id: id },
+      { firstName, lastName, userName, role, email, password }
+    );
+    res.json({
+      message: "User update success",
+      data: { firstName, lastName, userName, role, email, password },
+    });
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
+},
 
 };
 
