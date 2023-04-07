@@ -107,6 +107,18 @@ updateUser: async (req, res) => {
   }
 },
 
+//delete profile 
+deleteUser: async (req, res) => {
+  try {
+    const id = req.params.id;
+
+    await User.findByIdAndDelete({ _id: id });
+    res.json({ message: "delete success !" });
+  } catch (err) {
+    return res.status(500).json({ message: err.message });
+  }
+},
+
 };
 
 
