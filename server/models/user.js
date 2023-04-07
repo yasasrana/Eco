@@ -37,4 +37,4 @@ const userSchema = new Schema(
   }
 );
 
-export default model("User", userSchema);
+export default model("User", userSchema); //table name
