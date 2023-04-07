@@ -1,39 +1,27 @@
-//Kaveen Vehicle
+//Products
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const vehicleSchema = new Schema({
+const ProductSchema = new Schema({
 
-    VId: {
+    PId: {
         type: String,
     },
 
-    VehicleRegNo: {
+    ProductBrand: {
         type: String,
     },
 
-    VehicleModel: {
+    ProductModel: {
         type: String,
 
     },
 
-    VehicleType: {
+    ProductType: {
         type: String,
     },
 
-    VehicleBrand: {
-        type: String,
-    },
-
-    Mileage: {
-        type: Number,
-    },
-
-    InsType: {
-        type: String,
-    },
-
-    InsComName: {
+    FuelType: {
         type: String,
     },
 
@@ -41,38 +29,13 @@ const vehicleSchema = new Schema({
         type: String,
     },
 
-    AirC: {
+    Features: {
         type: String,
-    },
-
-    NoOfSeats: {
-        type: String,
-    },
-
-    RatePDay: {
-        type: Number,
-    },
-
-    YearsRent: {
-        type: String,
-    },
-
-    nic: { 
-        type: String, 
-        unique: true 
-    },
-
-    // vehPic: {
-    //     type: String,
-    // },
-
-    // vehDoc: {
-    //     type: String,
-    // },
+    }
 
 })
 
 
-const Vehicle = mongoose.model("Vehicle", vehicleSchema);
+const Product = mongoose.model("Product", ProductSchema);
 
-module.exports = Vehicle;
+module.exports = Product;
