@@ -33,7 +33,7 @@ const userSchema = new Schema(
     },
   },
   {
-    timestamps: true,
+    timestamps: true, //createdAt and updatedAt
   }
 );
 

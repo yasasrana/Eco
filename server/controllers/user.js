@@ -1,12 +1,15 @@
 import User from "../models/user.js";
-import jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken"; //token generation and password hashing
 import bcrypt from "bcryptjs";
 import {} from "dotenv/config";
 
-const userController = {
-  //get user
-  getOneUser: async (req, res) => {   //GET request to retrieve a single user's data from a MongoDB database using their ID.
+const userController = {   //userController is an object containing methods for handling various user-related requests in a web application.
+
+  getOneUser: async (req, res) => {
+    //GET request to retrieve a single user's data from a MongoDB database using their ID.
+    //get id from link
     const id = req.params.id;
+
     try {
       const user = await User.findOne({ _id: id }); //find the user with the specified ID.
       res.json({ message: "User fetch success", data: user });
@@ -26,12 +29,14 @@ const userController = {
   },
 //user login
 login: async (req, res) => {
+  //jason type request
   const { email, password } = req.body;
 
   // Check for user email
   const user = await User.findOne({ email });
 
-  if (user && (await bcrypt.compare(password, user.password))) {  //email is found and provided password with the hashed password
+  if (user && (await bcrypt.compare(password, user.password))) {  
+    //email is found and provided password with the password
     res.json({
       _id: user.id,
       name: user.name,
@@ -71,7 +76,7 @@ createUser: async (req, res) => {
       email,
       password: hashedPassword,
     });
-    const account = await newUser.save();
+    const account = await newUser.save(); //save data
     if (account) {
       res.status(200).json({
         _id: account.id,
@@ -128,5 +133,6 @@ const generateToken = (id) => {
     expiresIn: "30d",
   });
 };
-
+// returns a JSON Web Token (JWT) that contains the user ID and 
+//is signed with a secret key stored in an environment variable (process.env.JWT_SECRET)
 export default userController;
