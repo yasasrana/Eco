@@ -17,7 +17,7 @@ const Profileset = () => {
         columnSpacing={1}>
             <Grid  sx={{ marginTop: "50px",height: "100%" ,}} direction="column" >
             <Paper elevation={1} sx = {{margin:5,width:'80%',height: "100%", }}>
-                    <QuickLinks label='Profile Settings' to='/profilesettings' icon={Person2RoundedIcon}/>
+                    <QuickLinks label='Profile Settings' to='/profilesettings' icon={Person2RoundedIcon} active={true}/>
                     <QuickLinks label='My Orders' to='/' icon={ShoppingCartRoundedIcon}/>
                     <QuickLinks label='Sign Out' to='/' icon={ExitToAppRoundedIcon}/>
             

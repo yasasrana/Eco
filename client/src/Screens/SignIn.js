@@ -76,9 +76,10 @@ export default function SignIn() {
               required
               fullWidth
               name="password"
-              label="Password"
+              id="outlined-password-input"
               type="password"
-              id="password"
+              //id="password"
+              autoComplete="current-password"
               // autoComplete="current-password"
               InputLabelProps={{
                 style: { fontFamily: "Quicksand" },

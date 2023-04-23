@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 const QuickLinks = (props) => {
   const { label, to, active , icon: Icon } = props;
-  const borderColor = active ? "#3385ff" : "transparent";
-  const backgroundColor = active ? "#e6f2ff" : "transparent";
+  const borderColor = active ? "#006600" : "transparent";
+  const backgroundColor = active ? "#ebebe0" : "transparent";
   return (
     <div>
       <Button
@@ -27,7 +27,7 @@ const QuickLinks = (props) => {
           },
           backgroundColor: backgroundColor,
           "&:hover": {
-          backgroundColor: "#cce6ff",   //hover color
+          backgroundColor: "#f5f5f0",   //hover color
           },
         }}
       >

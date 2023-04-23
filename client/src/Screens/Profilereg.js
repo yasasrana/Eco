@@ -41,7 +41,7 @@ const Profilereg = () => {
       
     },
     registertext :{
-      paddingTop: "10px",
+      paddingTop: "30px",
       fontFamily: "Quicksand",
       marginLeft: "100px",
       textAlign: "left",
@@ -161,8 +161,10 @@ const Profilereg = () => {
             />
             <TextField
               required
+              id="outlined-password-input"
               variant="standard" 
               label="Password"
+              type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               margin="normal"
