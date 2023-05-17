@@ -33,8 +33,8 @@ const userSchema = new Schema(
     },
   },
   {
-    timestamps: true, //createdAt and updatedAt
+    timestamps: true,
   }
 );
 
-export default model("User", userSchema); //table name
+export default model("User", userSchema);
