@@ -34,7 +34,7 @@ const QuickLinks = (props) => {
        <Icon sx={{ color: "BLACK", fontSize: "15px", paddingRight: "10px" }} />
         {label}
       </Button>
-    
+  
     </div>
   );
 };

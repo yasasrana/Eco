@@ -15,6 +15,8 @@ const Home = () => {
     <Content/>
     <Content2/>
     <Footer/>
+   
+    
     </>
   )
 }
