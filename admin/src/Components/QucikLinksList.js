@@ -8,7 +8,7 @@ import ReceiptIcon from "@mui/icons-material/Receipt";
 export default function QucikLinksList() {
   const Styles = {
     grid: {
-      width: "20%",
+      width: "100%",
       marginTop: "20px",
       height: "auto",
       justifyContent: "left",
@@ -28,7 +28,7 @@ export default function QucikLinksList() {
           icon={ThreePIcon}
         />
         <QuickLinks label="Admin Details" to="/" icon={AppRegistrationIcon} />
-        <QuickLinks label="Admin Registration" to="/" icon={HowToRegIcon} />
+        <QuickLinks label="Admin Registration" to="/AdminSignUp" icon={HowToRegIcon} />
         <QuickLinks label="Reports" to="/" icon={ReceiptIcon} />
       </Grid>
     </div>
