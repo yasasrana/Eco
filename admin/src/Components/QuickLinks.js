@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 
 const QuickLinks = (props) => {
-  const { label, to, active } = props;
-  const borderColor = active ? "#3385ff" : "transparent";
-  const backgroundColor = active ? "#e6f2ff" : "transparent";
+  const { label, to, active,icon: IconComponent  } = props;
+  const borderColor = active ? "#2d8659" : "transparent";
+  const backgroundColor = active ? "#c6ecd9" : "transparent";
   return (
     <div>
       <Button
@@ -15,9 +15,9 @@ const QuickLinks = (props) => {
         sx={{
           marginTop: "5px",
           padding: "10px",
-          width: "100%",
+          width: "80%",
           fontFamily: "Quicksand",
-          color: "blue",
+          color: "black",
           display: "flex",
           justifyContent: "flex-start",
           alignItems: "center",
@@ -27,13 +27,15 @@ const QuickLinks = (props) => {
           },
           backgroundColor: backgroundColor,
           "&:hover": {
-          backgroundColor: "#cce6ff",   // hover color
+          backgroundColor: "#e6ffe6",   // hover color
           },
         }}
       >
-        <AddCircleIcon
-          sx={{ color: "green", fontSize: "15px", paddingRight: "10px" }}
-        />
+        {IconComponent && (
+          <IconComponent
+            sx={{ color: "#FAB140", fontSize: "15px", paddingRight: "10px" }}
+          />
+        )}
         {label}
       </Button>
     

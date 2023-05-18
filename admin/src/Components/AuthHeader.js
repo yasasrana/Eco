@@ -7,6 +7,7 @@ export default function AuthHeader() {
         fontFamily: "Quicksand",
         textAlign: "center",
         fontWeight: "bold"
+
     },
   };
 
