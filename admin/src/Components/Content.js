@@ -21,13 +21,13 @@ export default function Content() {
     }
     return (
         <>
-            <Box sx={{ width: "auto", height: "auto", background: "#dcecf1" }}>
+            <Box sx={{ width: "auto", height: "auto", background: "#e6ffe6" }}>
                 <Typography sx={Styles.Text}>
                     <SquareIcon sx={{ fontSize: "10px" }} />
                     Latest News
                 </Typography>
             </Box>
-            <Box sx={{ width: "auto", height: "auto", background: "#dcecf1" }}>
+            <Box sx={{ width: "auto", height: "auto", background: "#e6ffe6" }}>
                 <Typography sx={Styles.Text}>
                     <SquareIcon sx={{ fontSize: "10px" }} />
                     Events
