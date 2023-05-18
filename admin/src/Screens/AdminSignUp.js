@@ -173,14 +173,12 @@ const AdminSignUp = () => {
             Submit
           </Button>
         </Box>
-        <Box>
+        <Box sx={{mt:"20px"}}>
           <Typography sx={{ mt: "20px", fontFamily: "Quicksand" }} variant="h8">
             <b>Already have an account ? </b>{" "}
           </Typography>
           <Link to="/AdminSignIn">
-          
-              <b>Sign In</b>
-        
+            <b>Sign In</b>
           </Link>
         </Box>
       </Box>

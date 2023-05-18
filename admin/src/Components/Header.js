@@ -22,7 +22,9 @@ export default function Header() {
     <>
       <Grid container sx={{ justifyContent: "space-between", display: "flex" }}>
         <Grid item xs={1}>
+          <Link to = "/">
           <img style={Styles.img} src={Logo} alt="Logo" />
+          </Link>
         </Grid>
         <Grid item xs={1}>
           <Link to="/">
