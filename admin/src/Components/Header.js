@@ -2,6 +2,7 @@ import React from 'react'
 import Grid from '@mui/material/Grid';
 import Logo from '../Images/logo.png'
 import { Typography } from '@mui/material';
+import { Link } from "react-router-dom";
 
 export default function Header() {
 const Styles = {
@@ -18,11 +19,13 @@ const Styles = {
   return (
    
       <Grid container  sx={{ justifyContent:"space-between",display:"flex"}}>
-        <Grid item xs={2}>
+        <Grid item xs={1}>
           <img style={Styles.img} src={Logo} alt="Logo" />
         </Grid>
-        <Grid item xs={2}>
-        <Typography style={Styles.text}><b>DASHBOARD |</b></Typography>
+        <Grid item xs={1}>
+          <Link to="/">
+          <Typography style={Styles.text}><b>DASHBOARD |</b></Typography>
+          </Link>
         </Grid>
       </Grid>
   )

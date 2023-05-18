@@ -5,6 +5,7 @@ import Auth from "../Images/auth.png";
 import Finance from "../Images/finance.png";
 import Product from "../Images/products.png";
 import Order from "../Images/order.png";
+import { Link } from 'react-router-dom';
 
 const StyledImg = styled("img")({
   display: "block",
@@ -31,10 +32,12 @@ export default function Roles() {
     <div>
       <Grid container justifyContent="space-around" >
         <Grid>
+          <Link to="/authentication">
           <StyledImg
             src={Auth}
             alt="authentication management"
           />
+          </Link>
         </Grid>
         <Grid>
           <StyledImg

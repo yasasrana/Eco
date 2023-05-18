@@ -3,14 +3,15 @@ import QuickLinks from '../Components/QuickLinks'
 import Header from '../Components/Header'
 import Box from '@mui/material/Box';
 import { Grid } from "@mui/material";
-
+import AuthHeader from '../Components/AuthHeader';
 
 export default function Authentication() {
     return (
         <div>
             <Header />
+            <AuthHeader/>
             <Box sx={{
-                width: "auto", height: "auto", borderRadius: 1, marginTop: "4px", padding: "4px",
+               borderRadius: 1, marginTop: "4px", padding: "4px",
                 boxShadow: '0 4px 10px 2px rgba(0,0,0,0.2)'
             }}>
 
@@ -28,11 +29,10 @@ export default function Authentication() {
                 >
                     <Grid sx={{ height: "100%" }} direction="column" item xs={3}>
                         {/* <MyAppHeader label="My Apps" /> */}
-                        <QuickLinks label="Employee Registration - subdealer" to="/" />
-                        <QuickLinks label= "Subdealer EMP Mnagemenet" to="/" />
-                        <QuickLinks label = "Subdealer DOC Receive" to="/" active={true} />
-                        <QuickLinks label="IVR Registration Report" to="/" />
-                        <QuickLinks label="Adding Reporting Group " to="/" />
+                        <QuickLinks label="Customer Details" to="/" active={true} />
+                        <QuickLinks label= "Admin Details" to="/" />
+                        <QuickLinks label = "Admin Registration" to="/" />
+                        <QuickLinks label="Reports" to="/" />
 
 
                     </Grid>
