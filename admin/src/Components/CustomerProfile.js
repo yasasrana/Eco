@@ -4,54 +4,77 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Avatar, CardActionArea } from "@mui/material";
-import Box from "@mui/material";
-import Button from '@mui/material/Button';
-
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import User from "../Images/user.jpg";
+import Buttons from "../Buttons/Buttons";
 
 export default function CustomerProfile() {
-    const Styles = {
-        img: {
-          display: "block",
-          width: "100px",
-          paddingTop: "2px",
-          marginLeft: "10px",
-        },}
+  const Styles = {
+    cardContent: {
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flexDirection: "column",
+    },
+    img: {
+      height: 150,
+      width: 150,
+      borderRadius: "50%",
+    },
+    text: {
+      fontFamily: "Quicksand",
+    },
+  };
+
   return (
     <>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ maxWidth: 300 }}>
         <CardActionArea>
-          <CardMedia
-            component="img"
-            height="140"
-            image="/static/images/cards/contemplative-reptile.jpg"
-            alt="green iguana"
-          />
+          <CardContent sx={Styles.cardContent}>
+            <CardMedia
+              component="img"
+              style={Styles.img}
+              image={User}
+              alt="green iguana"
+            />
+          </CardContent>
           <CardContent>
-            <Box>
-            <img style={Styles.img} src={Avatar} alt="Logo" />
-            </Box>
-            <Typography gutterBottom variant="h5" component="div">
-            First Name : 
+            <Typography style={Styles.text} gutterBottom component="div">
+              First Name :
             </Typography>
-            <Typography gutterBottom variant="h5" component="div">
-            Last Name : 
+            <Typography style={Styles.text} gutterBottom component="div">
+              Last Name :
             </Typography>
-            <Typography gutterBottom variant="h5" component="div">
-            User Name : 
+            <Typography style={Styles.text} gutterBottom component="div">
+              User Name :
             </Typography>
-            <Typography gutterBottom variant="h5" component="div">
-            Email : 
+            <Typography style={Styles.text} gutterBottom component="div">
+              Email :
             </Typography>
-            <Typography gutterBottom variant="h5" component="div">
-            Password : 
+            <Typography style={Styles.text} gutterBottom component="div">
+              Password :
             </Typography>
-            <Typography gutterBottom variant="h5" component="div">
-            Date : 
+            <Typography style={Styles.text} gutterBottom component="div">
+              Date :
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              <Button>Edit</Button>
-              <Button>Delete</Button>
-            </Typography>
+            <CardContent
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
+              <Buttons
+                sx={{ width: "60%", fontFamily: "Quicksand" }}
+                label="Edit"
+                to="/"
+              />
+              <Buttons
+                sx={{ width: "60%", fontFamily: "Quicksand" }}
+                label="Delete"
+                to="/"
+              />
+            </CardContent>
           </CardContent>
         </CardActionArea>
       </Card>
