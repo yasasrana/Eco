@@ -28,6 +28,8 @@ const StyledImg = styled("img")({
 });
 
 export default function Roles() {
+
+
   return (
     <div>
       <Grid container justifyContent="space-around" >
@@ -45,11 +47,13 @@ export default function Roles() {
             alt="financial management"
           />
         </Grid>
-        <Grid>
-          <StyledImg
+        <Grid >
+        <Link to="/Productlist">
+          <StyledImg 
             src={Product}
             alt="products management"
           />
+          </Link>
         </Grid>
         <Grid>
           <StyledImg src={Order} alt="order management" />

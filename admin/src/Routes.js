@@ -4,6 +4,8 @@ import Dashboard from "./Screens/Dashboard";
 import Authentication from "./Screens/Authentication";
 import SignIn from "./Screens/SignIn";
 import AdminSignUp from "./Screens/AdminSignUp";
+import Productlist from "./Screens/Productpage";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -19,7 +21,7 @@ export const router = createBrowserRouter([
     element: <SignIn/>,
   },
   {
-    path: "/AdminSignUp",
-    element: <AdminSignUp/>,
+    path: "/Productlist",
+    element: <Productlist/>,
   },
 ]);

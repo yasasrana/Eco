@@ -4,6 +4,7 @@ import Home from "./Screens/Home";
 import Profilereg from "./Screens/Profilereg";
 import SignIn from "./Screens/SignIn";
 import Profileset from "./Screens/Profileset";
+import Productlist from "./Screens/Productpage";
 
 
 export const router = createBrowserRouter([
@@ -23,5 +24,10 @@ export const router = createBrowserRouter([
   {
     path: "/profilesettings",
     element: <Profileset/>,
+  },
+
+  {
+    path: "/productlist",
+    element: <Productlist/>,
   },
 ]);

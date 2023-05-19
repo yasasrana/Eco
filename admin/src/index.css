@@ -1,31 +1,105 @@
 @font-face {
-  font-family: 'Quicksand';
-  src: url('./Fonts/Quicksand-Regular.ttf') format('woff'),
-    url('./Fonts/Quicksand-Medium.ttf') format('truetype');
+  font-family: "Quicksand";
+  src: url("./Fonts/Quicksand-Regular.ttf") format("woff"), url("./Fonts/Quicksand-Medium.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Quicksand-Bold';
-  src: url('./Fonts/Quicksand-Bold.ttf') format('woff'),
-    url('./Fonts/Quicksand-Bold.ttf') format('truetype');
+  font-family: "Quicksand-Bold";
+  src: url("./Fonts/Quicksand-Bold.ttf") format("woff"), url("./Fonts/Quicksand-Bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Quicksand-Medium';
-  src: url('./Fonts/Quicksand-Medium.ttf') format('woff'),
-    url('./Fonts/Quicksand-Medium.ttf') format('truetype');
+  font-family: "Quicksand-Medium";
+  src: url("./Fonts/Quicksand-Medium.ttf") format("woff"), url("./Fonts/Quicksand-Medium.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Quicksand-SemiBold';
-  src: url('./Fonts/Quicksand-SemiBold.ttf') format('woff'),
-    url('./Fonts/Quicksand-SemiBold.ttf') format('truetype');
+  font-family: "Quicksand-SemiBold";
+  src: url("./Fonts/Quicksand-SemiBold.ttf") format("woff"), url("./Fonts/Quicksand-SemiBold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
+}
+
+td,
+th {
+  margin-left: 8px;
+  border-bottom: black;
+}
+
+.diagnostic-tablex {
+  text-align: center;
+  color: #070a63;
+  border-collapse: separate;
+  border-spacing: 0 5px;
+  max-width: 1388px;
+  margin-inline: 10px;
+}
+.diagnostic-tablex {
+  border-radius: 32px;
+}
+.diagnostic-tablex th {
+  width: 871px;
+  background-color: #eeeded;
+}
+.diagnostic-tablex th {
+  margin: 10;
+}
+.diagnostic-table td {
+  cursor: pointer;
+}
+.diagnostic-tablex td:first-child,
+.diagnostic-tablex th:first-child {
+  border-radius: 10px 0 0 10px;
+}
+.diagnostic-tablex td:last-child,
+.diagnostic-tablex th:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+.btncmmnblue {
+  background: linear-gradient(158.99deg, #65f593 13.87%, #4bc52f 99.09%);
+  border-radius: 8px;
+  width: 107px;
+  height: 34px;
+  border-width: 0;
+  color: #e2f3f3;
+  margin-left: 20px;
+}
+
+.btncmmnblue:focus {
+  box-shadow: none !important;
+}
+
+.btncmmngrey {
+  background: linear-gradient(158.99deg, #bbbcbc 13.87%, #383938 99.09%);
+  border-radius: 8px;
+  width: 107px;
+  height: 34px;
+  border-width: 0;
+  color: #e2f3f3;
+  margin-left: 20px;
+}
+
+.btncmmngrey:focus {
+  box-shadow: none !important;
+}
+
+.btncmmnred {
+  background: linear-gradient(158.99deg, #f56565 13.87%, #c52f2f 99.09%);
+  border-radius: 8px;
+  width: 107px;
+  height: 34px;
+  border-width: 0;
+  color: #e2f3f3;
+  margin-left: 20px;
+}
+
+.btncmmnred:focus {
+  box-shadow: none !important;
 }
